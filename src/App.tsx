@@ -20,11 +20,11 @@ const App: FC = () => {
 
 		console.info(`${token} promise created`)
 
-		p.then(resolution => {
-			if (resolution.error) {
-				throw new Error(resolution.error)
+		p.then(({ error, msg }) => {
+			if (error) {
+				throw new Error(error)
 			}
-			console.info(`${token} inside then... resolution.msg=${resolution.msg}...`)
+			console.info(`${token} inside then... resolution.msg=${msg}...`)
 		}).catch(err => {
 			console.error(`${token} an error occured...`, JSON.stringify(err, null, 4))
 		})
