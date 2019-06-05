@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { FC, useEffect } from 'react'
 
 // resources
 import logo from './logo.svg'
@@ -10,17 +10,17 @@ interface IResolution {
 	msg: string
 }
 
-const App: React.FC = () => {
+const App: FC = () => {
 	useEffect(() => {
 		const token = '[useEffect | App]'
 		console.info(`${token} mounting...`)
 
-		const p: Promise<any> = new Promise((resolve, reject) => { resolve({ msg: 'from resolve' }) })
-		// const p: Promise<any> = new Promise((resolve, reject) => { reject({ error: 'from reject' }) })
+		const p: Promise<IResolution> = new Promise((resolve, reject) => { resolve({ msg: 'from resolve' }) })
+		// const p: Promise<IResolution> = new Promise((resolve, reject) => { reject({ error: 'from reject' }) })
 
 		console.info(`${token} promise created`)
 
-		p.then((resolution: IResolution) => {
+		p.then(resolution => {
 			if (resolution.error) {
 				throw new Error(resolution.error)
 			}
