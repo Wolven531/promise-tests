@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+
+// resources
+import logo from './logo.svg'
+
+import './App.css'
 
 const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	useEffect(() => {
+		const token = '[useEffect | App]'
+		console.info(`${token} mounting...`)
+
+		const p: Promise<any> = new Promise((resolve, reject) => { resolve({ msg: 'from resolve' }) })
+
+		console.info(`${token} promise created`)
+
+		p.then(resolution => {
+			console.info(`${token} inside then... resolution.msg=${resolution.msg}...`)
+		}).catch(err => {
+			console.error(`${token} an error occured...`, err)
+		})
+	}, [])
+
+	return (
+		<div className="app">
+			<header className="app-header">
+				<img src={logo} className="app-logo" alt="logo" />
+			</header>
+		</div>
+	)
 }
 
-export default App;
+export default App
