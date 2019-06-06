@@ -22,3 +22,4 @@ Run `npm start` from the project root directory to start the app; Open the devel
 * Valid creation of resolved Promise in TypeScript
 * Valid creation of rejected Promise in TypeScript
 * Several invalid creation attempts in TypeScript w/ explanations
+* Examples using the [Q](https://www.npmjs.com/package/q) Promise library
