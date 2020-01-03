@@ -6,9 +6,6 @@ import {
 	resolve as QResolve
 } from 'q'
 
-// utils
-import { setPageTitle } from './utils'
-
 // local
 import { SimpleAppContent } from './SimpleAppContent'
 
@@ -21,7 +18,6 @@ interface IResolution {
 
 const AppWithQ: FC<any> = () => {
 	useEffect(() => {
-		setPageTitle('AppWithQ (Example - using Q Promise library)')
 		const token = '[useEffect | AppWithQ]'
 		console.info(`${token} mounting...`)
 
@@ -70,7 +66,7 @@ const AppWithQ: FC<any> = () => {
 		.done()
 	}, [])
 
-	return <SimpleAppContent />
+	return <SimpleAppContent pageTitle={'AppWithQ (Example - using Q Promise library)'} />
 }
 
 export default AppWithQ

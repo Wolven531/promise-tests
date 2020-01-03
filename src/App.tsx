@@ -1,8 +1,5 @@
 import React, { FC, useEffect } from 'react'
 
-// utils
-import { setPageTitle } from './utils'
-
 // local
 import { SimpleAppContent } from './SimpleAppContent'
 
@@ -15,7 +12,6 @@ interface IResolution {
 
 const App: FC<any> = () => {
 	useEffect(() => {
-		setPageTitle('App (Example - using native Promises)')
 		const token = '[useEffect | App]'
 		console.info(`${token} mounting...`)
 
@@ -54,7 +50,7 @@ const App: FC<any> = () => {
 		})
 	}, [])
 
-	return <SimpleAppContent />
+	return <SimpleAppContent pageTitle={'App (Example - using native Promises)'} />
 }
 
 export default App
