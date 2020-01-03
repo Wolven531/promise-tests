@@ -1,14 +1,12 @@
 import React, { FC, useEffect } from 'react'
 
+// utils
+import { IResolution } from './utils'
+
 // local
 import { SimpleAppContent } from './SimpleAppContent'
 
 import './App.css'
-
-interface IResolution {
-	error?: string
-	msg: string
-}
 
 const AppWithAsync: FC<any> = () => {
 	useEffect(() => {
