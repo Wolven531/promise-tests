@@ -1,5 +1,8 @@
 import React, { FC, useEffect } from 'react'
 
+// utils
+import { setPageTitle } from './utils'
+
 // local
 import { SimpleAppContent } from './SimpleAppContent'
 
@@ -12,6 +15,7 @@ interface IResolution {
 
 const AppWithAsync: FC<any> = () => {
 	useEffect(() => {
+		setPageTitle('AppWithAsync (Example - using await / async keywords)')
 		const token = '[useEffect | AppWithAsync]'
 		console.info(`${token} mounting...`)
 
