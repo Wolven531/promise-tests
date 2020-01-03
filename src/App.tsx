@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from 'react'
 
-// resources
-import logo from './logo.svg'
+// local
+import { SimpleAppContent } from './SimpleAppContent'
 
 import './App.css'
 
@@ -10,7 +10,7 @@ interface IResolution {
 	msg: string
 }
 
-const App: FC = () => {
+const App: FC<any> = () => {
 	useEffect(() => {
 		const token = '[useEffect | App]'
 		console.info(`${token} mounting...`)
@@ -50,13 +50,7 @@ const App: FC = () => {
 		})
 	}, [])
 
-	return (
-		<div className="app">
-			<header className="app-header">
-				<img src={logo} className="app-logo" alt="logo" />
-			</header>
-		</div>
-	)
+	return <SimpleAppContent />
 }
 
 export default App

@@ -6,8 +6,8 @@ import {
 	resolve as QResolve
 } from 'q'
 
-// resources
-import logo from './logo.svg'
+// local
+import { SimpleAppContent } from './SimpleAppContent'
 
 import './App.css'
 
@@ -16,7 +16,7 @@ interface IResolution {
 	msg: string
 }
 
-const AppWithQ: FC = () => {
+const AppWithQ: FC<any> = () => {
 	useEffect(() => {
 		const token = '[useEffect | AppWithQ]'
 		console.info(`${token} mounting...`)
@@ -66,13 +66,7 @@ const AppWithQ: FC = () => {
 		.done()
 	}, [])
 
-	return (
-		<div className="app">
-			<header className="app-header">
-				<img src={logo} className="app-logo" alt="logo" />
-			</header>
-		</div>
-	)
+	return <SimpleAppContent />
 }
 
 export default AppWithQ
