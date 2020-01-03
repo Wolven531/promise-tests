@@ -1,13 +1,15 @@
-# promise-tests
+# promise-tests (by Anthony Williams)
 
 This project was created to demonstrate and explain the native Promise library in TypeScript
 
 ## Tested Using
 
 * NodeJS
-  * 12.4.0
+  * 12.3.1 (May 22 2019)
+  * 12.4.0 (Jun 04 2019)
 * NPM
   * 6.9.0
+  * 6.13.4
 
 ## Setting Up
 
