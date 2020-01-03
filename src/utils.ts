@@ -7,4 +7,9 @@ const setPageTitle = (newTitle: string) => {
 	window.document.title = newTitle
 }
 
+export interface IResolution {
+	error?: string
+	msg: string
+}
+
 export { setPageTitle }
