@@ -8,6 +8,21 @@ import { SimpleAppContent } from './SimpleAppContent'
 
 import './App.css'
 
+const EXAMPLE_VALID_NATIVE_PROMISE =
+`const p: Promise<IResolution> = new Promise((resolve, reject) => { resolve({ msg: 'from resolve' }) })
+
+console.info(\`\${token} promise created\`)
+
+p.then(({ error, msg }) => {
+	if (error) {
+		throw new Error(error)
+	}
+	console.info(\`\${token} inside then... resolution.msg=\${msg}...\`)
+}).catch(err => {
+	console.error(\`\${token} an error occured...\`, JSON.stringify(err, null, 4))
+})
+`
+
 const App: FC<any> = () => {
 	useEffect(() => {
 		const token = '[useEffect | App]'
@@ -48,7 +63,16 @@ const App: FC<any> = () => {
 		})
 	}, [])
 
-	return <SimpleAppContent pageTitle={'App (Example - using native Promises)'} />
+	return (
+		<SimpleAppContent pageTitle={'App (Example - using native Promises)'}>
+			<textarea
+				cols={120}
+				readOnly={true}
+				rows={13}
+				value={EXAMPLE_VALID_NATIVE_PROMISE}
+			/>
+		</SimpleAppContent>
+	)
 }
 
 export default App
