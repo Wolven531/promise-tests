@@ -43,24 +43,9 @@ const App: FC<any> = () => {
 			return newVal
 		})
 	}
+	const handleClickRun = () => {
 
-	useEffect(() => {
-		const token = '[useEffect | App]'
-		console.info(`${token} mounting...`)
-
-		const p: Promise<IResolution> = new Promise((resolve, reject) => { resolve({ msg: 'from resolve' }) })
-
-		console.info(`${token} promise created`)
-
-		p.then(({ error, msg }) => {
-			if (error) {
-				throw new Error(error)
-			}
-			console.info(`${token} inside then... resolution.msg=${msg}...`)
-		}).catch(err => {
-			console.error(`${token} an error occured...`, JSON.stringify(err, null, 4))
-		})
-	}, [])
+	}
 
 	return (
 		<SimpleAppContent pageTitle={'App (Examples using native Promises)'}>
@@ -76,7 +61,7 @@ const App: FC<any> = () => {
 					Next Example
 				</button>
 			</section>
-			<h2>Example {currentExampleIndex + 1}</h2>
+			<h3>Example {currentExampleIndex + 1}</h3>
 			<textarea
 				cols={120}
 				readOnly={true}
@@ -84,6 +69,11 @@ const App: FC<any> = () => {
 				style={{ marginBottom: 50 }}
 				value={examples[currentExampleIndex]}
 			/>
+			<button className="btn-run-example"
+				onClick={handleClickRun}
+				>
+				Run Example
+			</button>
 		</SimpleAppContent>
 	)
 }
