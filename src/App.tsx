@@ -44,7 +44,11 @@ const App: FC<any> = () => {
 		})
 	}
 	const handleClickRun = () => {
-
+		try {
+			eval(examples[currentExampleIndex])
+		} catch (err) {
+			alert(err)
+		}
 	}
 
 	return (
