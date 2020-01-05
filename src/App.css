@@ -23,6 +23,27 @@
 	color: #61dafb;
 }
 
+.app .btn-change-example {
+	border-color: #333;
+	border-radius: 15px;
+	border-width: 1px;
+	color: #333;
+	font-size: 16pt;
+	font-weight: normal;
+	height: 50px;
+	padding: 5px;
+	transition: all;
+	transition-delay: 0;
+	transition-duration: .5s;
+	width: 200px;
+}
+
+.app .btn-change-example:hover {
+	background-color: #61dafb;
+	font-size: 18pt;
+	font-weight: bold;
+}
+
 @keyframes app-logo-spin {
 	from {
 		transform: rotate(0deg);

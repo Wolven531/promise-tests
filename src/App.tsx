@@ -50,17 +50,7 @@ const App: FC<any> = () => {
 
 	return (
 		<SimpleAppContent pageTitle={'App (Example - using native Promises)'}>
-			<button style={{
-					borderColor: '#333',
-					borderRadius: 15,
-					borderWidth: 1,
-					color: '#333',
-					fontSize: 18,
-					fontWeight: 'bold',
-					height: 50,
-					padding: 5,
-					width: 200
-				}}
+			<button className="btn-change-example"
 				onClick={() => { setCurrentExampleIndex(oldIndex => (oldIndex + 1) % examples.length) }}
 				>
 				Next Example
