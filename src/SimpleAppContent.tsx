@@ -19,8 +19,7 @@ const SimpleAppContent: FC<ISimpleAppProps> = (props) => {
 		<div className="app">
 			<header className="app-header">
 				<img src={logo} className="app-logo" alt="logo" />
-				<h1>{props.pageTitle}</h1>
-				<p>Hit F12 to open the developer console and see how the Promise executed</p>
+				<h2>{props.pageTitle}</h2>
 				{props.children !== undefined && props.children}
 			</header>
 		</div>
