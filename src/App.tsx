@@ -1,7 +1,4 @@
-import React, { FC, useEffect, useState } from 'react'
-
-// utils
-import { IResolution } from './utils'
+import React, { FC, useState } from 'react'
 
 // local
 import {
@@ -18,13 +15,41 @@ import { SimpleAppContent } from './SimpleAppContent'
 import './App.css'
 
 const examples = [
-	EXAMPLE_VALID_NATIVE_PROMISE,
-	EXAMPLE_VALID_NATIVE_PROMISE_SINGLE_ARG,
-	EXAMPLE_VALID_NATIVE_PROMISE_REJECTED,
-	EXAMPLE_INVALID_NATIVE_PROMISE,
-	EXAMPLE_INVALID_NATIVE_PROMISE_UNDEFINED,
-	EXAMPLE_INVALID_NATIVE_PROMISE_UNRESOLVED,
-	EXAMPLE_INVALID_NATIVE_PROMISE_UNRESOLVED_2
+	{
+		description: '',
+		summary: 'A Valid Resolved Native Promise using JS',
+		text: EXAMPLE_VALID_NATIVE_PROMISE
+	},
+	{
+		description: 'This form uses a single argument',
+		summary: 'A Valid Resolved Native Promise using JS',
+		text: EXAMPLE_VALID_NATIVE_PROMISE_SINGLE_ARG
+	},
+	{
+		description: '',
+		summary: 'A Valid Rejected Native Promise using JS',
+		text: EXAMPLE_VALID_NATIVE_PROMISE_REJECTED
+	},
+	{
+		description: 'This promise will resolve with the wrong value type',
+		summary: 'An Invalid Native Promise using JS',
+		text: EXAMPLE_INVALID_NATIVE_PROMISE
+	},
+	{
+		description: 'This promise will resolve with undefined',
+		summary: 'An Invalid Native Promise using JS',
+		text: EXAMPLE_INVALID_NATIVE_PROMISE_UNDEFINED
+	},
+	{
+		description: 'This promise will never resolve',
+		summary: 'An Invalid Native Promise using JS',
+		text: EXAMPLE_INVALID_NATIVE_PROMISE_UNRESOLVED
+	},
+	{
+		description: 'This promise will also never resolve',
+		summary: 'An Invalid Native Promise using JS',
+		text: EXAMPLE_INVALID_NATIVE_PROMISE_UNRESOLVED_2
+	}
 ]
 
 const App: FC<any> = () => {
@@ -45,11 +70,13 @@ const App: FC<any> = () => {
 	}
 	const handleClickRun = () => {
 		try {
-			eval(examples[currentExampleIndex])
+			/* eslint no-eval: 0 */
+			eval(examples[currentExampleIndex].text)
 		} catch (err) {
 			alert(err)
 		}
 	}
+	const currentExample = examples[currentExampleIndex]
 
 	return (
 		<SimpleAppContent pageTitle={'App (Examples using native Promises)'}>
@@ -65,13 +92,14 @@ const App: FC<any> = () => {
 					Next Example
 				</button>
 			</section>
-			<h3>Example {currentExampleIndex + 1}</h3>
+			<h3>Example {currentExampleIndex + 1} - {currentExample.summary}</h3>
+			{currentExample.description.length > 0 && <h5>{currentExample.description}</h5>}
 			<textarea
 				cols={120}
 				readOnly={true}
 				rows={15}
-				style={{ marginBottom: 50 }}
-				value={examples[currentExampleIndex]}
+				style={{ margin: 25 }}
+				value={currentExample.text}
 			/>
 			<button className="btn-run-example"
 				onClick={handleClickRun}

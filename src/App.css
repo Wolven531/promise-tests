@@ -23,6 +23,15 @@
 	color: #61dafb;
 }
 
+.app h3,
+.app h5 {
+	margin-bottom: 0;
+}
+
+.app h5 {
+	margin-top: 10px;
+}
+
 .app .btn-controls {
 	display: flex;
 	flex-direction: row;
