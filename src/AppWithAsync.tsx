@@ -36,7 +36,7 @@ const AppWithAsync: FC<any> = () => {
 		.catch(rejectionReason => { console.error(`${token} promise rejected...`, JSON.stringify(rejectionReason, null, 4)) })
 	}, [])
 
-	return <SimpleAppContent pageTitle={'AppWithAsync (Example - using await / async keywords)'} />
+	return <SimpleAppContent pageTitle={'AppWithAsync (Examples using await / async keywords)'} />
 }
 
 export default AppWithAsync

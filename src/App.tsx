@@ -29,6 +29,20 @@ const examples = [
 
 const App: FC<any> = () => {
 	const [currentExampleIndex, setCurrentExampleIndex] = useState(0)
+	const handleClickNext = () => {
+		setCurrentExampleIndex(oldIndex => (oldIndex + 1) % examples.length)
+	}
+	const handleClickPrevious = () => {
+		setCurrentExampleIndex(oldIndex => {
+			let newVal = oldIndex - 1
+
+			if (newVal < 0) {
+				newVal = examples.length - 1
+			}
+
+			return newVal
+		})
+	}
 
 	useEffect(() => {
 		const token = '[useEffect | App]'
@@ -49,25 +63,15 @@ const App: FC<any> = () => {
 	}, [])
 
 	return (
-		<SimpleAppContent pageTitle={'App (Example - using native Promises)'}>
+		<SimpleAppContent pageTitle={'App (Examples using native Promises)'}>
 			<section className="btn-controls">
 				<button className="btn-change-example prev"
-					onClick={() => {
-						setCurrentExampleIndex(oldIndex => {
-							let newVal = oldIndex - 1
-
-							if (newVal < 0) {
-								newVal = examples.length - 1
-							}
-
-							return newVal
-						})
-					}}
+					onClick={handleClickPrevious}
 					>
 					Previous Example
 				</button>
 				<button className="btn-change-example next"
-					onClick={() => { setCurrentExampleIndex(oldIndex => (oldIndex + 1) % examples.length) }}
+					onClick={handleClickNext}
 					>
 					Next Example
 				</button>

@@ -64,7 +64,7 @@ const AppWithQ: FC<any> = () => {
 		.done()
 	}, [])
 
-	return <SimpleAppContent pageTitle={'AppWithQ (Example - using Q Promise library)'} />
+	return <SimpleAppContent pageTitle={'AppWithQ (Examples using Q Promise library)'} />
 }
 
 export default AppWithQ
