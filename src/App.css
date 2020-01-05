@@ -23,25 +23,48 @@
 	color: #61dafb;
 }
 
+.app .btn-controls {
+	display: flex;
+	flex-direction: row;
+}
+
 .app .btn-change-example {
 	border-color: #333;
 	border-radius: 15px;
 	border-width: 1px;
 	color: #333;
-	font-size: 16pt;
+	display: inline-block;
+	font-size: 15pt;
 	font-weight: normal;
 	height: 50px;
 	padding: 5px;
 	transition: all;
 	transition-delay: 0;
 	transition-duration: .5s;
-	width: 200px;
+	width: 250px;
+}
+
+.app .btn-change-example.next {
+	background-color: #080;
+}
+
+.app .btn-change-example.prev {
+	background-color: #880;
 }
 
 .app .btn-change-example:hover {
-	background-color: #61dafb;
-	font-size: 18pt;
+	color: #fff;
+	font-size: 16pt;
 	font-weight: bold;
+	text-shadow: 1px 1px 2px #000;
+}
+
+.app .btn-change-example.next:hover {
+	background-color: #0a0;
+}
+
+.app .btn-change-example.prev:hover {
+	background-color: #aa0;
 }
 
 @keyframes app-logo-spin {

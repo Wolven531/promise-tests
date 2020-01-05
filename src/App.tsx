@@ -50,11 +50,28 @@ const App: FC<any> = () => {
 
 	return (
 		<SimpleAppContent pageTitle={'App (Example - using native Promises)'}>
-			<button className="btn-change-example"
-				onClick={() => { setCurrentExampleIndex(oldIndex => (oldIndex + 1) % examples.length) }}
-				>
-				Next Example
-			</button>
+			<section className="btn-controls">
+				<button className="btn-change-example prev"
+					onClick={() => {
+						setCurrentExampleIndex(oldIndex => {
+							let newVal = oldIndex - 1
+
+							if (newVal < 0) {
+								newVal = examples.length - 1
+							}
+
+							return newVal
+						})
+					}}
+					>
+					Previous Example
+				</button>
+				<button className="btn-change-example next"
+					onClick={() => { setCurrentExampleIndex(oldIndex => (oldIndex + 1) % examples.length) }}
+					>
+					Next Example
+				</button>
+			</section>
 			<h2>Example {currentExampleIndex + 1}</h2>
 			<textarea
 				cols={120}
