@@ -10,46 +10,35 @@ import {
 	EXAMPLE_VALID_NATIVE_PROMISE_REJECTED,
 	EXAMPLE_VALID_NATIVE_PROMISE_SINGLE_ARG
 } from './examples'
+
+import { Example } from './Example'
 import { SimpleAppContent } from './SimpleAppContent'
 
 import './App.css'
 
 const examples = [
-	{
-		description: '',
-		summary: 'A Valid Resolved Native Promise using JS',
-		text: EXAMPLE_VALID_NATIVE_PROMISE
-	},
-	{
-		description: 'This form uses a single argument',
-		summary: 'A Valid Resolved Native Promise using JS',
-		text: EXAMPLE_VALID_NATIVE_PROMISE_SINGLE_ARG
-	},
-	{
-		description: '',
-		summary: 'A Valid Rejected Native Promise using JS',
-		text: EXAMPLE_VALID_NATIVE_PROMISE_REJECTED
-	},
-	{
-		description: 'This promise will resolve with the wrong value type',
-		summary: 'An Invalid Native Promise using JS',
-		text: EXAMPLE_INVALID_NATIVE_PROMISE
-	},
-	{
-		description: 'This promise will resolve with undefined',
-		summary: 'An Invalid Native Promise using JS',
-		text: EXAMPLE_INVALID_NATIVE_PROMISE_UNDEFINED
-	},
-	{
-		description: 'This promise will never resolve',
-		summary: 'An Invalid Native Promise using JS',
-		text: EXAMPLE_INVALID_NATIVE_PROMISE_UNRESOLVED
-	},
-	{
-		description: 'This promise will also never resolve',
-		summary: 'An Invalid Native Promise using JS',
-		text: EXAMPLE_INVALID_NATIVE_PROMISE_UNRESOLVED_2
-	}
+	new Example(EXAMPLE_VALID_NATIVE_PROMISE, 'A Valid Resolved Native Promise using JS'),
+	new Example(
+		EXAMPLE_VALID_NATIVE_PROMISE_SINGLE_ARG,
+		'A Valid Resolved Native Promise using JS',
+		'This form uses a single argument'),
+	new Example(EXAMPLE_VALID_NATIVE_PROMISE_REJECTED, 'A Valid Rejected Native Promise using JS'),
+	new Example(
+		EXAMPLE_INVALID_NATIVE_PROMISE,
+		'An Invalid Native Promise using JS',
+		'This promise will resolve with the wrong value type'),
+	new Example(
+		EXAMPLE_INVALID_NATIVE_PROMISE_UNDEFINED,
+		'An Invalid Native Promise using JS',
+		'This promise will resolve with undefined'),
+	new Example(
+		EXAMPLE_INVALID_NATIVE_PROMISE_UNRESOLVED,
+		'An Invalid Native Promise using JS',
+		'This promise will never resolve'),
+	new Example(
+		EXAMPLE_INVALID_NATIVE_PROMISE_UNRESOLVED_2,
+		'An Invalid Native Promise using JS',
+		'This promise will also never resolve')
 ]
 
 const App: FC<any> = () => {
