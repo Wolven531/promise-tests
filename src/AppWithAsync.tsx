@@ -1,7 +1,4 @@
-import React, { FC, useEffect, useState } from 'react'
-
-// utils
-import { IResolution } from './utils'
+import React, { FC, useState } from 'react'
 
 // local
 import {
