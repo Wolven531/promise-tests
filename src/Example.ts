@@ -8,10 +8,7 @@ class Example {
 		public text: string,
 		public summary: string,
 		public description = ''
-		) {
-
-
-	}
+		) { }
 }
 
 export { Example }

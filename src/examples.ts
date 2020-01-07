@@ -1,3 +1,20 @@
+export const ASYNC_EXAMPLE_VALID =
+`const someAsyncFunc = async () => ({ msg: 'from resolve' })
+const p = someAsyncFunc()
+
+alert('promise created')
+
+p.then(({ error, msg }) => {
+	if (error) {
+		throw new Error(error)
+	}
+	alert(\`inside then... resolution.msg=\${msg}...\`)
+})
+.catch(err => {
+	alert(\`an error occured... \\n\\n\${ JSON.stringify(err, null, 4) }\`)
+})
+`
+
 export const EXAMPLE_VALID_NATIVE_PROMISE =
 `const p = new Promise((resolve, reject) => { resolve({ msg: 'from resolve' }) })
 
@@ -8,7 +25,8 @@ p.then(({ error, msg }) => {
 		throw new Error(error)
 	}
 	alert(\`inside then... resolution.msg=\${msg}...\`)
-}).catch(err => {
+})
+.catch(err => {
 	alert(\`an error occured... \\n\\n\${ JSON.stringify(err, null, 4) }\`)
 })
 `
@@ -23,7 +41,8 @@ p.then(({ error, msg }) => {
 		throw new Error(error)
 	}
 	alert(\`inside then... resolution.msg=\${msg}...\`)
-}).catch(err => {
+})
+.catch(err => {
 	alert(\`an error occured... \\n\\n\${ JSON.stringify(err, null, 4) }\`)
 })
 `
@@ -38,7 +57,8 @@ p.then(({ error, msg }) => {
 		throw new Error(error)
 	}
 	alert(\`inside then... resolution.msg=\${msg}...\`)
-}).catch(err => {
+})
+.catch(err => {
 	alert(\`an error occured... \\n\\n\${ JSON.stringify(err, null, 4) }\`)
 })
 `
@@ -55,7 +75,8 @@ p.then(({ error, msg }) => {
 		throw new Error(error)
 	}
 	alert(\`inside then... resolution.msg=\${msg}...\`)
-}).catch(err => {
+})
+.catch(err => {
 	alert(\`an error occured... \\n\\n\${ JSON.stringify(err, null, 4) }\`)
 })
 `
@@ -72,7 +93,8 @@ p.then(({ error, msg }) => {
 		throw new Error(error)
 	}
 	alert(\`inside then... resolution.msg=\${msg}...\`)
-}).catch(err => {
+})
+.catch(err => {
 	alert(\`an error occured... \\n\\n\${ JSON.stringify(err, null, 4) }\`)
 })
 `
@@ -89,7 +111,8 @@ p.then(({ error, msg }) => {
 		throw new Error(error)
 	}
 	alert(\`inside then... resolution.msg=\${msg}...\`)
-}).catch(err => {
+})
+.catch(err => {
 	alert(\`an error occured... \\n\\n\${ JSON.stringify(err, null, 4) }\`)
 })
 `
@@ -106,7 +129,8 @@ p.then(({ error, msg }) => {
 		throw new Error(error)
 	}
 	alert(\`inside then... resolution.msg=\${msg}...\`)
-}).catch(err => {
+})
+.catch(err => {
 	alert(\`an error occured... \\n\\n\${ JSON.stringify(err, null, 4) }\`)
 })
 `
