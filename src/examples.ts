@@ -1,70 +1,105 @@
 export const ASYNC_EXAMPLE_VALID =
 `const someAsyncFunc = async () => ({ msg: 'from resolve' })
-const p = someAsyncFunc()
 
-alert('promise created')
+// NOTE: in order to use await keyword, must be inside an async function
+async function runExample() {
+	try {
+		alert('about to create promise...')
 
-p.then(({ error, msg }) => {
-	if (error) {
-		throw new Error(error)
+		const { error, msg } = await someAsyncFunc()
+
+		if (error) {
+			throw new Error(error)
+		}
+		alert(\`inside then... resolution.msg=\${msg}...\`)
+	} catch(err) {
+		alert(\`an error occured... \\n\\n\${ JSON.stringify(err, null, 4) }\`)
 	}
-	alert(\`inside then... resolution.msg=\${msg}...\`)
-})
-.catch(err => {
-	alert(\`an error occured... \\n\\n\${ JSON.stringify(err, null, 4) }\`)
-})
+}
+runExample()
 `
 
 export const ASYNC_EXAMPLE_VALID_IIFE =
-`// IIFE form (Immediately Invoked Function Expression)
-const p = (async () => ({ msg: 'from resolve' }))()
+`// NOTE: in order to use await keyword, must be inside an async function
+async function runExample() {
+	try {
+		alert('about to create promise...')
 
-alert('promise created')
+		// IIFE form (Immediately Invoked Function Expression)
+		const { error, msg } = await (async () => ({ msg: 'from resolve' }))()
 
-p.then(({ error, msg }) => {
-	if (error) {
-		throw new Error(error)
+		if (error) {
+			throw new Error(error)
+		}
+		alert(\`inside then... resolution.msg=\${msg}...\`)
+	} catch(err) {
+		alert(\`an error occured... \\n\\n\${ JSON.stringify(err, null, 4) }\`)
 	}
-	alert(\`inside then... resolution.msg=\${msg}...\`)
-})
-.catch(err => {
-	alert(\`an error occured... \\n\\n\${ JSON.stringify(err, null, 4) }\`)
-})
+}
+runExample()
+`
+
+export const ASYNC_EXAMPLE_VALID_REJECTED =
+`// NOTE: one way to create a rejected promise is to throw an Error during resolution
+const someAsyncFunc = async () => { throw new Error('This error forces a rejection') }
+
+// NOTE: in order to use await keyword, must be inside an async function
+async function runExample() {
+	try{
+		alert('about to create promise...')
+
+		const { error, msg } = await someAsyncFunc()
+
+		if (error) {
+			throw new Error(error)
+		}
+		alert(\`inside then... resolution.msg=\${msg}...\`)
+	} catch(err) {
+		alert(\`an error occured... \\n\\n\${ JSON.stringify(err, null, 4) }\`)
+	}
+}
+runExample()
 `
 
 export const ASYNC_EXAMPLE_INVALID_PROMISE =
-`// NOTE: invalid because of TSC: Argument of type '5' is not assignable
-// to parameter of type 'IResolution | PromiseLike<IResolution> | undefined'
-const p = (async () => 5)()
+`// NOTE: in order to use await keyword, must be inside an async function
+async function runExample() {
+	try {
+		alert('about to create promise...')
 
-alert('promise created')
+		// NOTE: invalid because of TSC: Argument of type '5' is not assignable
+		// to parameter of type 'IResolution | PromiseLike<IResolution> | undefined'
+		const { error, msg } = await (async () => 5)()
 
-p.then(({ error, msg }) => {
-	if (error) {
-		throw new Error(error)
+		if (error) {
+			throw new Error(error)
+		}
+		alert(\`inside then... resolution.msg=\${msg}...\`)
+	} catch(err) {
+		alert(\`an error occured... \\n\\n\${ JSON.stringify(err, null, 4) }\`)
 	}
-	alert(\`inside then... resolution.msg=\${msg}...\`)
-})
-.catch(err => {
-	alert(\`an error occured... \\n\\n\${ JSON.stringify(err, null, 4) }\`)
-})
+}
+runExample()
 `
 
 export const ASYNC_EXAMPLE_INVALID_VOID =
-`// NOTE: invalid because return type is void
-const p = (async () => { return })()
+`// NOTE: in order to use await keyword, must be inside an async function
+async function runExample() {
+	try {
+		alert('about to create promise...')
 
-alert('promise created')
+		// NOTE: invalid because return type is void
+		const { error, msg } = await (async () => { return })()
 
-p.then(({ error, msg }) => {
-	if (error) {
-		throw new Error(error)
+		if (error) {
+			throw new Error(error)
+		}
+		alert(\`inside then... resolution.msg=\${msg}...\`)
+	} catch(err) {
+		alert(\`an error occured... \\n\\n\${ JSON.stringify(err, null, 4) }\`)
 	}
-	alert(\`inside then... resolution.msg=\${msg}...\`)
-})
-.catch(err => {
-	alert(\`an error occured... \\n\\n\${ JSON.stringify(err, null, 4) }\`)
-})
+}
+runExample()
 `
 
 export const EXAMPLE_VALID_NATIVE_PROMISE =
