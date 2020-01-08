@@ -5,7 +5,8 @@ import {
 	ASYNC_EXAMPLE_INVALID_PROMISE,
 	ASYNC_EXAMPLE_INVALID_VOID,
 	ASYNC_EXAMPLE_VALID,
-	ASYNC_EXAMPLE_VALID_IIFE
+	ASYNC_EXAMPLE_VALID_IIFE,
+	ASYNC_EXAMPLE_VALID_REJECTED
 } from './examples'
 
 import { Example } from './Example'
@@ -14,11 +15,15 @@ import { SimpleAppContent } from './SimpleAppContent'
 import './App.css'
 
 const examples: Example[] = [
-	new Example(ASYNC_EXAMPLE_VALID, 'A Valid Promise using async / await'),
+	new Example(ASYNC_EXAMPLE_VALID, 'A Valid Resolved Promise using async / await'),
 	new Example(
 		ASYNC_EXAMPLE_VALID_IIFE,
-		'A Valid Promise using async / await',
+		'A Valid Resolved Promise using async / await',
 		'This is IIFE form (Immediately Invoked Function Expression)'),
+	new Example(
+		ASYNC_EXAMPLE_VALID_REJECTED,
+		'A Valid Rejected Promise using async / await',
+		'This example throws an Error during resolution to force a rejection'),
 	new Example(
 		ASYNC_EXAMPLE_INVALID_PROMISE,
 		'An Invalid Promise using async / await',
