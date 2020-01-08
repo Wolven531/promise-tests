@@ -15,6 +15,58 @@ p.then(({ error, msg }) => {
 })
 `
 
+export const ASYNC_EXAMPLE_VALID_IIFE =
+`// IIFE form (Immediately Invoked Function Expression)
+const p = (async () => ({ msg: 'from resolve' }))()
+
+alert('promise created')
+
+p.then(({ error, msg }) => {
+	if (error) {
+		throw new Error(error)
+	}
+	alert(\`inside then... resolution.msg=\${msg}...\`)
+})
+.catch(err => {
+	alert(\`an error occured... \\n\\n\${ JSON.stringify(err, null, 4) }\`)
+})
+`
+
+export const ASYNC_EXAMPLE_INVALID_PROMISE =
+`// NOTE: invalid because of TSC: Argument of type '5' is not assignable
+// to parameter of type 'IResolution | PromiseLike<IResolution> | undefined'
+const p = (async () => 5)()
+
+alert('promise created')
+
+p.then(({ error, msg }) => {
+	if (error) {
+		throw new Error(error)
+	}
+	alert(\`inside then... resolution.msg=\${msg}...\`)
+})
+.catch(err => {
+	alert(\`an error occured... \\n\\n\${ JSON.stringify(err, null, 4) }\`)
+})
+`
+
+export const ASYNC_EXAMPLE_INVALID_VOID =
+`// NOTE: invalid because return type is void
+const p = (async () => { return })()
+
+alert('promise created')
+
+p.then(({ error, msg }) => {
+	if (error) {
+		throw new Error(error)
+	}
+	alert(\`inside then... resolution.msg=\${msg}...\`)
+})
+.catch(err => {
+	alert(\`an error occured... \\n\\n\${ JSON.stringify(err, null, 4) }\`)
+})
+`
+
 export const EXAMPLE_VALID_NATIVE_PROMISE =
 `const p = new Promise((resolve, reject) => { resolve({ msg: 'from resolve' }) })
 
