@@ -221,3 +221,24 @@ p.then(({ error, msg }) => {
 	alert(\`an error occured... \\n\\n\${ JSON.stringify(err, null, 4) }\`)
 })
 `
+
+export const Q_EXAMPLE_VALID =
+`// NOTE: VALID way to create resolved promise
+const p = Q.Promise((resolve, reject, notify) => { resolve({ msg: 'from resolve' }) })
+
+alert('promise created')
+
+p.then(({ error, msg }) => {
+	if (error) {
+		throw new Error(error)
+	}
+	alert(\`inside then... resolution.msg=\${msg}...\`)
+})
+.progress(progress => {
+	console.info(\`progress=\${progress}\`)
+})
+.fail(err => {
+	alert(\`an error occured... \\n\\n\${ JSON.stringify(err, null, 4) }\`)
+})
+.done()
+`
