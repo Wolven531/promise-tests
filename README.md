@@ -7,6 +7,7 @@ This project was created to demonstrate and explain the native Promise library i
 * NodeJS
   * 12.3.1 (May 22 2019)
   * 12.4.0 (Jun 04 2019)
+  * 12.14.0 (Dec 16 2019)
 * NPM
   * 6.9.0
   * 6.13.4
@@ -17,7 +18,7 @@ Run `npm i` from the project root directory to install the NodeJS dependencies (
 
 ## Running
 
-Run `npm start` from the project root directory to start the app; Open the developer console to see console output
+Run `npm start` from the project root directory to start the app
 
 ## Examples
 
