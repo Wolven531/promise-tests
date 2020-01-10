@@ -33,7 +33,8 @@ fetch('https://cdnjs.cloudflare.com/ajax/libs/q.js/1.5.1/q.js')
 	.then(respText => {
 		eval(respText) // NOTE: execute Q library code dynamically
 
-		// NOTE: VALID way to create resolved promise (because reject is unused, single arg funcs require no parens)
+		// NOTE: VALID way to create resolved promise
+		// (because reject is unused, single arg funcs require no parens)
 		const p = Q.Promise(resolve => { resolve({ msg: 'from resolve' }) })
 
 		alert('promise created')
