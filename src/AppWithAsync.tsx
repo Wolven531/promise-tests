@@ -7,7 +7,7 @@ import {
 	ASYNC_EXAMPLE_VALID,
 	ASYNC_EXAMPLE_VALID_IIFE,
 	ASYNC_EXAMPLE_VALID_REJECTED
-} from './examples'
+} from './examples/examplesAsync'
 
 import { Example } from './Example'
 import { SimpleAppContent } from './SimpleAppContent'

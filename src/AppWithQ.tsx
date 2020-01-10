@@ -9,7 +9,7 @@ import React, { FC, useState } from 'react'
 // local
 import {
 	Q_EXAMPLE_VALID
-} from './examples'
+} from './examples/examplesQ'
 
 import { Example } from './Example'
 import { SimpleAppContent } from './SimpleAppContent'
