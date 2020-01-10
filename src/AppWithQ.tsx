@@ -20,7 +20,17 @@ import { SimpleAppContent } from './SimpleAppContent'
 import './App.css'
 
 const examples: Example[] = [
-	new Example(Q_EXAMPLE_VALID, 'A Valid Resolved Promise using the Q Library')
+	new Example(Q_EXAMPLE_VALID, 'A Valid Resolved Promise using the Q Library'),
+	new Example(Q_EXAMPLE_VALID_SINGLE_ARG,
+		'A Valid Resolved Promise using the Q Library',
+		'This form uses a single argument'),
+	new Example(Q_EXAMPLE_VALID_USING_RESOLVE,
+		'A Valid Resolved Promise using the Q Library',
+		'This example makes use of the static resolve() function'),
+	new Example(Q_EXAMPLE_VALID_USING_REJECT,
+		'A Valid Rejected Promise using the Q Library',
+		'This example makes use of the static reject() function'),
+	new Example(Q_EXAMPLE_VALID_REJECTED, 'A Valid Rejected Promise using the Q Library'),
 ]
 
 const AppWithQ: FC<any> = () => {
