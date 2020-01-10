@@ -1,0 +1,8 @@
+{
+	"name": "Promise Tests (by Anthony Williams)",
+	"description": "Used to demonstrate and explain different promise and async concepts and libraries",
+	"repository": "https://github.com/Wolven531/promise-tests",
+	"logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+	"keywords": ["node", "express", "heroku", "promise", "promises", "async"],
+	"image": "heroku/nodejs"
+}
