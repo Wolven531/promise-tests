@@ -7,6 +7,7 @@ This README is also available as a website (using GitHub Pages) at [https://wolv
 ## Live Demo
 
 * Hosted w/ Heroku - [https://promise-tests.herokuapp.com/](https://promise-tests.herokuapp.com/)
+  * For more information on hosting Typescript or React apps on Heroku, see the [docs](https://devcenter.heroku.com/articles/buildpacks#using-a-third-party-buildpack)
 
 ## Tested Using
 
