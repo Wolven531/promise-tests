@@ -2,6 +2,8 @@
 
 This project was created to demonstrate and explain the native Promise library in TypeScript
 
+This README is also available as a website (using GitHub Pages) at [https://wolven531.github.io/promise-tests/](https://wolven531.github.io/promise-tests/)
+
 ## Live Demo
 
 * Hosted w/ Heroku - [https://promise-tests.herokuapp.com/](https://promise-tests.herokuapp.com/)
