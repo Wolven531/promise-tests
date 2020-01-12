@@ -2,6 +2,10 @@
 
 This project was created to demonstrate and explain the native Promise library in TypeScript
 
+## Live Demo
+
+* Hosted w/ Heroku - [https://promise-tests.herokuapp.com/](https://promise-tests.herokuapp.com/)
+
 ## Tested Using
 
 * NodeJS
