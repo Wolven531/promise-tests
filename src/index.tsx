@@ -25,13 +25,13 @@ ReactDOM.render((
 		<nav>
 			<ul>
 				<li>
-					<Link to="/">Home (Native Promises)</Link>
+					<Link to="/">Native</Link>
 				</li>
 				<li>
-					<Link to="/async">Async / Await Promises</Link>
+					<Link to="/async">Async / Await</Link>
 				</li>
 				<li>
-					<Link to="/q">Q Library Promises</Link>
+					<Link to="/q">Q Library</Link>
 				</li>
 			</ul>
 		</nav>
