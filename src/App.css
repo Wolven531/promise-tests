@@ -23,11 +23,7 @@
 }
 
 #root nav {
-	bottom: 0;
 	height: 80px;
-	left: 0;
-	position: absolute;
-	right: 0;
 }
 
 #root nav ul {
