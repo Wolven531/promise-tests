@@ -59,10 +59,9 @@ const ExampleViewer: FC<any> = props => {
 					cols={52}
 					readOnly={true}
 					rows={15}
-					// value={currentExample.text}
-					wrap="soft"
-					// wrap="hard"
-				>{currentExample.text}</textarea>
+					value={currentExample.text}
+					wrap="soft" // 'soft' | 'hard'
+				/>
 				<button className="btn-run-example"
 					onClick={handleClickRun}
 					>
