@@ -73,11 +73,8 @@
 
 .example-viewer .example-txt {
 	margin-bottom: 25px;
-	/* maxWidth: '98vw' */
-	max-width: 400px;
+	/* max-width: 400px; */
 	overflow-x: scroll;
 	overflow-y: scroll;
-	scrollbar-width: 10px;
 	/* word-wrap: none; */
-
 }

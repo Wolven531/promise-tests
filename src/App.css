@@ -1,5 +1,31 @@
 body {
 	background-color: #282c34;
+	display: grid;
+	height: 100vh;
+}
+
+#root {
+	align-self: stretch;
+	display: grid;
+	grid-template-areas:
+		". content ."
+		"footer footer footer";
+	grid-template-columns: 5px 1fr 5px;
+	grid-template-rows: 1fr 80px;
+}
+
+@media only screen and (min-width: 900px) {
+	#root {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+#root > * {
+	grid-area: content;
+}
+
+#root nav {
+	grid-area: footer;
 }
 
 .app {
@@ -24,10 +50,6 @@ body {
 
 .app-link {
 	color: #61dafb;
-}
-
-#root nav {
-	height: 80px;
 }
 
 #root nav ul {
