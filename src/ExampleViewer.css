@@ -9,28 +9,27 @@
 }
 
 .example-viewer .btn-controls {
-	justify-content: space-between;/* this was added */
+	justify-content: space-between;
 	display: flex;
 	flex-direction: row;
-	width: 400px;/* this was added */
+	width: 400px;
 }
-
 
 .example-viewer .btn-change-example,
 .example-viewer .btn-run-example {
 	border-color: #333;
 	border-radius: 15px;
 	border-width: 1px;
-	color: #fff;/* this was changed from #333 */
+	color: #fff;
 	display: inline-block;
-	font-size: 14pt;/* this was changed from 15pt */
+	font-size: 14pt;
 	font-weight: normal;
 	height: 50px;
 	padding: 5px;
 	transition: all;
 	transition-delay: 0s;
 	transition-duration: .5s;
-	width: 190px; /* this was changed from 250px */
+	width: 190px;
 }
 
 .example-viewer .btn-change-example.next {
@@ -41,9 +40,19 @@
 	background-color: #880;
 }
 
+@media only screen and (min-width: 615px) {
+	.example-viewer .btn-controls {
+		width: 600px;
+	}
+
+	.example-viewer .btn-change-example {
+		width: 250px;
+	}
+}
+
 .example-viewer .btn-change-example:hover {
 	color: #fff;
-	font-size: 15pt;/* this was changed from 16pt */
+	font-size: 15pt;
 	font-weight: bold;
 	text-shadow: 1px 1px 2px #000;
 }
@@ -58,6 +67,7 @@
 
 .example-viewer .btn-run-example {
 	background-color: #61dafb;
+	color: #00f;
 	margin-bottom: 50px;
 	width: 33%;
 }
