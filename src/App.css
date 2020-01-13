@@ -14,11 +14,13 @@ body {
 	grid-template-rows: 1fr 80px;
 }
 
+/*
 @media only screen and (min-width: 900px) {
 	#root {
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: 1fr 4fr 1fr;
 	}
 }
+*/
 
 #root > * {
 	grid-area: content;
