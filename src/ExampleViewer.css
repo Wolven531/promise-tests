@@ -1,0 +1,83 @@
+.example-viewer h3,
+.example-viewer h5 {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.example-viewer h3 + h5 {
+	margin-top: 0;
+}
+
+.example-viewer .btn-controls {
+	justify-content: space-between;/* this was added */
+	display: flex;
+	flex-direction: row;
+	width: 400px;/* this was added */
+}
+
+
+.example-viewer .btn-change-example,
+.example-viewer .btn-run-example {
+	border-color: #333;
+	border-radius: 15px;
+	border-width: 1px;
+	color: #fff;/* this was changed from #333 */
+	display: inline-block;
+	font-size: 14pt;/* this was changed from 15pt */
+	font-weight: normal;
+	height: 50px;
+	padding: 5px;
+	transition: all;
+	transition-delay: 0s;
+	transition-duration: .5s;
+	width: 190px; /* this was changed from 250px */
+}
+
+.example-viewer .btn-change-example.next {
+	background-color: #080;
+}
+
+.example-viewer .btn-change-example.prev {
+	background-color: #880;
+}
+
+.example-viewer .btn-change-example:hover {
+	color: #fff;
+	font-size: 15pt;/* this was changed from 16pt */
+	font-weight: bold;
+	text-shadow: 1px 1px 2px #000;
+}
+
+.example-viewer .btn-change-example.next:hover {
+	background-color: #0a0;
+}
+
+.example-viewer .btn-change-example.prev:hover {
+	background-color: #aa0;
+}
+
+.example-viewer .btn-run-example {
+	background-color: #61dafb;
+	margin-bottom: 50px;
+	width: 33%;
+}
+
+.example-viewer .btn-run-example:hover {
+	background-color: #0a0;
+	color: #ff0;
+	font-size: 16pt;
+	font-weight: bold;
+	text-shadow: 1px 1px 2px #000;
+	width: 50%;
+}
+
+.example-viewer .example-txt {
+	margin-bottom: 25px;
+	/* maxWidth: '98vw' */
+	max-width: 400px;
+	overflow-x: scroll;
+	overflow-y: scroll;
+	scrollbar-width: 10px;
+	/* word-wrap: none; */
+
+}
