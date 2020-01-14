@@ -5,7 +5,7 @@
 		"email": "anthony.williams.cs@gmail.com",
 		"url": "https://github.com/Wolven531"
 	},
-	"version": "0.2.3",
+	"version": "0.2.5",
 	"private": false,
 	"dependencies": {
 		"q": "^1.5.1",
@@ -26,11 +26,13 @@
 	},
 	"pre-commit": [
 		"foo",
-		"bumpVer"
+		"bumpVer",
+		"addBumpedVer"
 	],
 	"scripts": {
 		"build": "react-scripts build",
 		"bumpVer": "node ./bumpVersion.js",
+		"addBumpedVer": "git add ./package.json",
 		"eject": "react-scripts eject",
 		"foo": "echo 'foo!' && exit 0",
 		"postinstall": "tsc",
