@@ -1,12 +1,14 @@
 const fs = require('fs')
 const path = require('path')
 
+const FILE_ENCODING = 'utf8'
 const FILENAME = 'package.json'
 
 const REGEX_MAJOR_VERSION = /(\d+)\.\d+\.\d+/
 const REGEX_MINOR_VERSION = /\d+\.(\d+)\.\d+/
 const REGEX_PATCH_VERSION = /\d+\.\d+\.(\d+)/
-const REGEX_VERSION = /\s+"version":\s+"(.+)",/
+const REGEX_VERSION_WITH_SPACES = /\s+"version":\s+"(.+)",/
+const REGEX_VERSION = /"version":\s+"(.+)",/
 
 const filePath = path.join(__dirname, FILENAME)
 
@@ -20,8 +22,8 @@ console.log(`"${FILENAME}" found, reading contents...`)
 // Open file for reading and writing
 // fs.readFileSync(filePath, { encoding: 'UTF8', flag: 'r+' })
 // Open file for reading
-const packContents = fs.readFileSync(filePath, { encoding: 'UTF8', flag: 'r' })
-const results = REGEX_VERSION.exec(packContents)
+const packContents = fs.readFileSync(filePath, { encoding: FILE_ENCODING, flag: 'r' })
+const results = REGEX_VERSION_WITH_SPACES.exec(packContents)
 
 if (!results) {
 	console.error(`"version" not found in "${FILENAME}", bailing...`)
@@ -60,5 +62,9 @@ switch (selectedBump) {
 }
 
 console.log(`Bumping "${selectedBump}" from "${currentVersion}" to version "${newVersion}"...`)
+
+const newContents = packContents.replace(REGEX_VERSION, `"version": "${newVersion}",`)
+
+fs.writeFileSync(filePath, newContents, { encoding: FILE_ENCODING })
 
 return 0
