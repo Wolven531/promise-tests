@@ -25,10 +25,12 @@
 		"pre-commit": "^1.2.2"
 	},
 	"pre-commit": [
-		"foo"
+		"foo",
+		"bumpVer"
 	],
 	"scripts": {
 		"build": "react-scripts build",
+		"bumpVer": "node ./bumpVersion.js",
 		"eject": "react-scripts eject",
 		"foo": "echo 'foo!' && exit 0",
 		"postinstall": "tsc",
