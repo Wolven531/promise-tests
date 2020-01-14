@@ -21,11 +21,16 @@
 		"@types/q": "^1.5.2",
 		"@types/react": "^16.9.17",
 		"@types/react-dom": "^16.9.4",
-		"@types/react-router-dom": "^5.1.3"
+		"@types/react-router-dom": "^5.1.3",
+		"pre-commit": "^1.2.2"
 	},
+	"pre-commit": [
+		"foo"
+	],
 	"scripts": {
 		"build": "react-scripts build",
 		"eject": "react-scripts eject",
+		"foo": "echo 'foo!' && exit 0",
 		"postinstall": "tsc",
 		"start": "react-scripts start",
 		"test": "react-scripts test"
