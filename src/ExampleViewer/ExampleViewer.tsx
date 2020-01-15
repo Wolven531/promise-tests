@@ -67,10 +67,16 @@ const ExampleViewer: FC<any> = props => {
 					value={currentExample.text}
 					wrap="soft" // 'soft' | 'hard'
 				/>
-				<section>
-					<button onClick={() => { setCurrentEditorSize(SIZE_COMPACT) }}>Compact</button>
-					<button onClick={() => { setCurrentEditorSize(SIZE_NORMAL) }}>Normal</button>
-					<button onClick={() => { setCurrentEditorSize(SIZE_DEVELOPER) }}>Developer</button>
+				<section className="editor-controls">
+					<button
+						className="compact"
+						onClick={() => { setCurrentEditorSize(SIZE_COMPACT) }}>Compact</button>
+					<button
+						className="normal"
+						onClick={() => { setCurrentEditorSize(SIZE_NORMAL) }}>Normal</button>
+					<button
+						className="developer"
+						onClick={() => { setCurrentEditorSize(SIZE_DEVELOPER) }}>Developer</button>
 				</section>
 				<button className="btn-run-example"
 					onClick={handleClickRun}

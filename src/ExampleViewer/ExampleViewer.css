@@ -8,11 +8,33 @@
 	margin-top: 0;
 }
 
-.example-viewer .btn-controls {
+.example-viewer .btn-controls,
+.example-viewer .editor-controls {
 	justify-content: space-between;
 	display: flex;
 	flex-direction: row;
 	width: 400px;
+}
+
+.example-viewer .editor-controls {
+	margin-bottom: 25px;
+	margin-top: 25px;
+}
+
+.example-viewer .editor-controls button {
+	border-color: #333;
+	border-radius: 15px;
+	border-width: 1px;
+	color: #fff;
+	display: inline-block;
+	font-size: 14pt;
+	font-weight: normal;
+	height: 50px;
+	padding: 5px;
+	transition: all;
+	transition-delay: 0s;
+	transition-duration: .5s;
+	width: 130px;
 }
 
 .example-viewer .btn-change-example,
@@ -32,6 +54,7 @@
 	width: 190px;
 }
 
+.example-viewer .editor-controls button.compact,
 .example-viewer .btn-change-example.next {
 	background-color: #080;
 }
@@ -40,16 +63,38 @@
 	background-color: #880;
 }
 
+.example-viewer .editor-controls button.developer {
+	background-color: #777;
+}
+
+.example-viewer .editor-controls button.developer:hover {
+	background-color: #f90;
+}
+
+.example-viewer .editor-controls button.normal {
+	background-color: #000;
+}
+
+.example-viewer .editor-controls button.normal:hover {
+	background-color: #333;
+}
+
 @media only screen and (min-width: 615px) {
-	.example-viewer .btn-controls {
+	.example-viewer .btn-controls,
+	.example-viewer .editor-controls {
 		width: 600px;
 	}
 
 	.example-viewer .btn-change-example {
 		width: 250px;
 	}
+
+	.example-viewer .editor-controls button {
+		width: 190px;
+	}
 }
 
+.example-viewer .editor-controls button:hover,
 .example-viewer .btn-change-example:hover {
 	color: #fff;
 	font-size: 15pt;
@@ -57,12 +102,13 @@
 	text-shadow: 1px 1px 2px #000;
 }
 
+.example-viewer .editor-controls button.compact:hover,
 .example-viewer .btn-change-example.next:hover {
-	background-color: #0a0;
+	background-color: #0c0;
 }
 
 .example-viewer .btn-change-example.prev:hover {
-	background-color: #aa0;
+	background-color: #cc0;
 }
 
 .example-viewer .btn-run-example {
@@ -73,8 +119,8 @@
 }
 
 .example-viewer .btn-run-example:hover {
-	background-color: #0a0;
-	color: #ff0;
+	background-color: #0c0;
+	color: #cc0;
 	font-size: 16pt;
 	font-weight: bold;
 	text-shadow: 1px 1px 2px #000;
@@ -82,9 +128,6 @@
 }
 
 .example-viewer .example-txt {
-	margin-bottom: 25px;
-	/* max-width: 400px; */
 	overflow-x: scroll;
 	overflow-y: scroll;
-	/* word-wrap: none; */
 }
