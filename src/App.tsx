@@ -44,7 +44,7 @@ const examples = [
 const App: FC<any> = () => {
 	return <ExampleViewer
 		examples={examples}
-		title={'App (Examples using native Promises)'} />
+		title={'Examples using native Promises'} />
 }
 
 export default App

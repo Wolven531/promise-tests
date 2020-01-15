@@ -37,7 +37,7 @@ const examples: Example[] = [
 const AppWithAsync: FC<any> = () => {
 	return <ExampleViewer
 		examples={examples}
-		title={'AppWithAsync (Examples using await / async keywords)'} />
+		title={'Examples using await / async keywords'} />
 }
 
 export default AppWithAsync

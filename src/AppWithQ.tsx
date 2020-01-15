@@ -58,7 +58,7 @@ const examples: Example[] = [
 const AppWithQ: FC<any> = () => {
 	return <ExampleViewer
 		examples={examples}
-		title={'AppWithQ (Examples using Q Promise library)'} />
+		title={'Examples using Q Promise library'} />
 }
 
 export default AppWithQ
