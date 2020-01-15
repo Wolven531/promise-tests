@@ -10,7 +10,7 @@ import {
 } from './examples/examplesAsync'
 
 import { Example } from './Example'
-import { ExampleViewer } from './ExampleViewer'
+import { ExampleViewer } from './ExampleViewer/ExampleViewer'
 
 import './App.css'
 

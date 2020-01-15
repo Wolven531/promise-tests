@@ -15,7 +15,7 @@ import {
 } from './examples/examplesQ'
 
 import { Example } from './Example'
-import { ExampleViewer } from './ExampleViewer'
+import { ExampleViewer } from './ExampleViewer/ExampleViewer'
 
 import './App.css'
 

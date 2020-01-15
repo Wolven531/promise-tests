@@ -12,7 +12,7 @@ import {
 } from './examples/examples'
 
 import { Example } from './Example'
-import { ExampleViewer } from './ExampleViewer'
+import { ExampleViewer } from './ExampleViewer/ExampleViewer'
 
 import './App.css'
 
