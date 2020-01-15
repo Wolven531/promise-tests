@@ -14,10 +14,9 @@ export interface IExampleViewerProps {
 const SIZE_COMPACT = 52
 const SIZE_DEVELOPER = 120
 const SIZE_NORMAL = 80
-const EDITOR_SIZES = [SIZE_COMPACT, SIZE_NORMAL, SIZE_DEVELOPER]
 
 const ExampleViewer: FC<any> = props => {
-	const [currentEditorSize, setCurrentEditorSize] = useState(0)
+	const [currentEditorSize, setCurrentEditorSize] = useState(SIZE_COMPACT)
 	const [currentExampleIndex, setCurrentExampleIndex] = useState(0)
 	const handleClickNext = () => {
 		setCurrentExampleIndex(oldIndex => (oldIndex + 1) % props.examples.length)
@@ -42,7 +41,6 @@ const ExampleViewer: FC<any> = props => {
 		}
 	}
 	const currentExample = props.examples[currentExampleIndex]
-	const editorCols = EDITOR_SIZES[currentEditorSize]
 
 	return (
 		<article className="example-viewer">
@@ -63,16 +61,16 @@ const ExampleViewer: FC<any> = props => {
 				{currentExample.description.length > 0 && <h5>{currentExample.description}</h5>}
 				<textarea
 					className="example-txt"
-					cols={editorCols}
+					cols={currentEditorSize}
 					readOnly={true}
 					rows={15}
 					value={currentExample.text}
 					wrap="soft" // 'soft' | 'hard'
 				/>
 				<section>
-					<button onClick={() => { setCurrentEditorSize(0) }}>Compact</button>
-					<button onClick={() => { setCurrentEditorSize(1) }}>Normal</button>
-					<button onClick={() => { setCurrentEditorSize(2) }}>Developer</button>
+					<button onClick={() => { setCurrentEditorSize(SIZE_COMPACT) }}>Compact</button>
+					<button onClick={() => { setCurrentEditorSize(SIZE_NORMAL) }}>Normal</button>
+					<button onClick={() => { setCurrentEditorSize(SIZE_DEVELOPER) }}>Developer</button>
 				</section>
 				<button className="btn-run-example"
 					onClick={handleClickRun}
