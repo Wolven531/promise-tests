@@ -49,12 +49,12 @@ const ExampleViewer: FC<any> = props => {
 					<button className="btn-change-example prev"
 						onClick={handleClickPrevious}
 						>
-						Previous Example
+						Previous
 					</button>
 					<button className="btn-change-example next"
 						onClick={handleClickNext}
 						>
-						Next Example
+						Next
 					</button>
 				</section>
 				<h3>Example {currentExampleIndex + 1} - {currentExample.summary}</h3>
@@ -81,7 +81,7 @@ const ExampleViewer: FC<any> = props => {
 				<button className="btn-run-example"
 					onClick={handleClickRun}
 					>
-					Run Example
+					Execute
 				</button>
 			</SimpleAppContent>
 		</article>
