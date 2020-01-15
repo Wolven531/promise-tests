@@ -3,6 +3,9 @@ const path = require('path')
 
 const FILE_ENCODING = 'utf8'
 const FILENAME = 'package.json'
+const VERSION_MAJOR = 'major'
+const VERSION_MINOR = 'minor'
+const VERSION_PATCH = 'patch'
 
 const REGEX_MAJOR_VERSION = /(\d+)\.\d+\.\d+/
 const REGEX_MINOR_VERSION = /\d+\.(\d+)\.\d+/
@@ -40,16 +43,18 @@ console.log(`Minor Version: "${minor}"`)
 console.log(`Patch Version: "${patch}"`)
 
 let newVersion = ''
-const selectedBump = 'patch' // 'major' | 'minor' | 'patch'
+const selectedBump = process.argv.length > 2
+	? process.argv[2] // 'major' | 'minor' | 'patch'
+	: VERSION_PATCH
 
 switch (selectedBump) {
-	case 'major':
+	case VERSION_MAJOR:
 		newVersion = `${major + 1}.0.0`
 		break
-	case 'minor':
+	case VERSION_MINOR:
 		newVersion = `${major}.${minor + 1}.0`
 		break
-	case 'patch':
+	case VERSION_PATCH:
 		newVersion = `${major}.${minor}.${patch + 1}`
 		break
 	default:
