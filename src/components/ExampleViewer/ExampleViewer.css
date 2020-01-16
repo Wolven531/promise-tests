@@ -127,7 +127,11 @@
 	width: 50%;
 }
 
-.example-viewer .example-txt {
-	overflow-x: scroll;
-	overflow-y: scroll;
+.example-viewer .editor-container {
+	border: 1px solid #fff;
+	margin-bottom: 25px;
+	max-width: 95%;
+	overflow: auto;
+	padding: 1px;
+	text-align: left;
 }

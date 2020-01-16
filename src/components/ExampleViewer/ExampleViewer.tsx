@@ -1,4 +1,6 @@
 import React, { FC, useState } from 'react'
+import SyntaxHighlighter from 'react-syntax-highlighter'
+import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
 // local
 import { Example } from '../../models/Example'
@@ -11,12 +13,7 @@ export interface IExampleViewerProps {
 	title: string
 }
 
-const SIZE_COMPACT = 52
-const SIZE_DEVELOPER = 120
-const SIZE_NORMAL = 80
-
 const ExampleViewer: FC<any> = props => {
-	const [currentEditorSize, setCurrentEditorSize] = useState(SIZE_COMPACT)
 	const [currentExampleIndex, setCurrentExampleIndex] = useState(0)
 	const handleClickNext = () => {
 		setCurrentExampleIndex(oldIndex => (oldIndex + 1) % props.examples.length)
@@ -59,24 +56,12 @@ const ExampleViewer: FC<any> = props => {
 				</section>
 				<h3>Example {currentExampleIndex + 1} - {currentExample.summary}</h3>
 				{currentExample.description.length > 0 && <h5>{currentExample.description}</h5>}
-				<textarea
-					className="example-txt"
-					cols={currentEditorSize}
-					readOnly={true}
-					rows={15}
-					value={currentExample.text}
-					wrap="soft" // 'soft' | 'hard'
-				/>
-				<section className="editor-controls">
-					<button
-						className="compact"
-						onClick={() => { setCurrentEditorSize(SIZE_COMPACT) }}>Compact</button>
-					<button
-						className="normal"
-						onClick={() => { setCurrentEditorSize(SIZE_NORMAL) }}>Normal</button>
-					<button
-						className="developer"
-						onClick={() => { setCurrentEditorSize(SIZE_DEVELOPER) }}>Developer</button>
+				<section className="editor-container">
+					<SyntaxHighlighter
+						language="javascript"
+						showLineNumbers={true}
+						style={atomOneDark}
+					>{currentExample.text}</SyntaxHighlighter>
 				</section>
 				<button className="btn-run-example"
 					onClick={handleClickRun}
