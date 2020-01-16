@@ -5,7 +5,7 @@
 		"email": "anthony.williams.cs@gmail.com",
 		"url": "https://github.com/Wolven531"
 	},
-	"version": "0.3.24",
+	"version": "0.3.25",
 	"private": false,
 	"dependencies": {
 		"q": "^1.5.1",
@@ -13,6 +13,7 @@
 		"react-dom": "^16.8.6",
 		"react-router-dom": "^5.1.2",
 		"react-scripts": "^3.3.0",
+		"react-syntax-highlighter": "^12.2.1",
 		"typescript": "^3.7.4"
 	},
 	"devDependencies": {
@@ -22,6 +23,7 @@
 		"@types/react": "^16.9.17",
 		"@types/react-dom": "^16.9.4",
 		"@types/react-router-dom": "^5.1.3",
+		"@types/react-syntax-highlighter": "^11.0.4",
 		"pre-commit": "^1.2.2"
 	},
 	"pre-commit": [
