@@ -7,10 +7,10 @@ import {
 	ASYNC_EXAMPLE_VALID,
 	ASYNC_EXAMPLE_VALID_IIFE,
 	ASYNC_EXAMPLE_VALID_REJECTED
-} from './examples/examplesAsync'
+} from '../../examples/examplesAsync'
 
-import { Example } from './Example'
-import { ExampleViewer } from './ExampleViewer/ExampleViewer'
+import { Example } from '../../models/Example'
+import { ExampleViewer } from '../ExampleViewer/ExampleViewer'
 
 import './App.css'
 

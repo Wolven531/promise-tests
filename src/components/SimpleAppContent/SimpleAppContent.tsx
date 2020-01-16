@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from 'react'
 
 // utils
-import { setPageTitle } from './utils'
+import { setPageTitle } from '../../utils'
 
 // resources
 import logo from './logo.svg'

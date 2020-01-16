@@ -7,9 +7,9 @@ import {
 	Switch
 } from 'react-router-dom'
 
-import App from './App'
-import AppWithAsync from './AppWithAsync'
-import AppWithQ from './AppWithQ'
+import App from './components/App/App'
+import AppWithAsync from './components/App/AppWithAsync'
+import AppWithQ from './components/App/AppWithQ'
 
 import * as serviceWorker from './serviceWorker'
 

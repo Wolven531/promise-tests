@@ -9,10 +9,10 @@ import {
 	EXAMPLE_VALID_NATIVE_PROMISE,
 	EXAMPLE_VALID_NATIVE_PROMISE_REJECTED,
 	EXAMPLE_VALID_NATIVE_PROMISE_SINGLE_ARG
-} from './examples/examples'
+} from '../../examples/examples'
 
-import { Example } from './Example'
-import { ExampleViewer } from './ExampleViewer/ExampleViewer'
+import { Example } from '../../models/Example'
+import { ExampleViewer } from '../ExampleViewer/ExampleViewer'
 
 import './App.css'
 

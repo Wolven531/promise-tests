@@ -1,8 +1,8 @@
 import React, { FC, useState } from 'react'
 
 // local
-import { Example } from '../Example'
-import { SimpleAppContent } from '../SimpleAppContent'
+import { Example } from '../../models/Example'
+import { SimpleAppContent } from '../SimpleAppContent/SimpleAppContent'
 
 import './ExampleViewer.css'
 

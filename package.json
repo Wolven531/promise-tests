@@ -5,7 +5,7 @@
 		"email": "anthony.williams.cs@gmail.com",
 		"url": "https://github.com/Wolven531"
 	},
-	"version": "0.3.23",
+	"version": "0.3.24",
 	"private": false,
 	"dependencies": {
 		"q": "^1.5.1",

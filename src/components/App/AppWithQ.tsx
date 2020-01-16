@@ -12,10 +12,10 @@ import {
 	Q_EXAMPLE_VALID_SINGLE_ARG,
 	Q_EXAMPLE_VALID_USING_REJECT,
 	Q_EXAMPLE_VALID_USING_RESOLVE
-} from './examples/examplesQ'
+} from '../../examples/examplesQ'
 
-import { Example } from './Example'
-import { ExampleViewer } from './ExampleViewer/ExampleViewer'
+import { Example } from '../../models/Example'
+import { ExampleViewer } from '../ExampleViewer/ExampleViewer'
 
 import './App.css'
 
