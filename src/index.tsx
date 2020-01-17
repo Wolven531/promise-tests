@@ -9,6 +9,7 @@ import {
 
 import App from './components/App/App'
 import AppWithAsync from './components/App/AppWithAsync'
+import AppWithAxios from './components/App/AppWithAxios'
 import AppWithQ from './components/App/AppWithQ'
 
 import * as serviceWorker from './serviceWorker'
@@ -18,6 +19,7 @@ import './index.css'
 ReactDOM.render((
 	<Router>
 		<Switch>
+			<Route path="/axios" component={AppWithAxios} />
 			<Route path="/q" component={AppWithQ} />
 			<Route path="/async" component={AppWithAsync} />
 			<Route path="/" component={App} />
@@ -32,6 +34,9 @@ ReactDOM.render((
 				</li>
 				<li>
 					<Link to="/q">Q Library</Link>
+				</li>
+				<li>
+					<Link to="/axios">Axios Library</Link>
 				</li>
 			</ul>
 		</nav>
