@@ -5,9 +5,10 @@
 		"email": "anthony.williams.cs@gmail.com",
 		"url": "https://github.com/Wolven531"
 	},
-	"version": "0.3.26",
+	"version": "0.3.27",
 	"private": false,
 	"dependencies": {
+		"axios": "^0.19.1",
 		"q": "^1.5.1",
 		"react": "^16.8.6",
 		"react-dom": "^16.8.6",
@@ -35,7 +36,6 @@
 		"bumpVer": "node ./bumpVersion.js patch",
 		"addBumpedVer": "git add ./package.json",
 		"eject": "react-scripts eject",
-		"postinstall": "tsc",
 		"start": "react-scripts start",
 		"test": "react-scripts test"
 	},
