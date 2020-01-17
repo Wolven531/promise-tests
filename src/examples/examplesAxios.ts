@@ -1,23 +1,35 @@
 export const AXIOS_EXAMPLE_VALID =
-`// NOTE: make Axios library available first by fetching over the web
-// fetch('https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.min.js')
-// fetch('https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.js')
-// fetch('https://unpkg.com/axios/dist/axios.min.js')
-fetch('https://raw.githubusercontent.com/axios/axios/master/dist/axios.js')
+`// NOTE: make require library available first by fetching over the web
+fetch('https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js')
 	.then(resp => resp.text())
-	.then(respText => {
-		// console.log(respText)
-		eval(respText) // NOTE: execute Axios library code dynamically
+	.then(requireScript => {
+		try {
+			eval(requireScript) // NOTE: execute require library code dynamically
+		} catch (err) {
+			alert('failed to eval require library', err)
+		}
 
-		// const axios = require('axios')
-		// import axios from 'axios'
-		// import axios
-		// import('axios')
+		// NOTE: make Axios library available first by fetching over the web
+		return fetch('https://raw.githubusercontent.com/axios/axios/master/dist/axios.js')
+	})
+	.then(resp => resp.text())
+	.then(axiosScript => {
+		try {
+			eval(axiosScript) // NOTE: execute Axios library code dynamically
+		} catch (err) {
+			alert('failed to eval axios library', err)
+		}
 
+		if (typeof require === 'undefined' && typeof window.require === 'undefined') {
+			alert('failed to load require dynamically')
+			return
+		}
 		if (typeof axios === 'undefined' && typeof window.axios === 'undefined') {
 			alert('failed to load axios dynamically')
 			return
 		}
+
+		const axios = require('axios')
 
 		// NOTE: VALID way to create resolved promise
 		const p = axios.get('https://api.github.com/users/wolven531/repos')
