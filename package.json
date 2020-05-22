@@ -5,7 +5,7 @@
 		"email": "anthony.williams.cs@gmail.com",
 		"url": "https://github.com/Wolven531"
 	},
-	"version": "0.3.32",
+	"version": "0.3.33",
 	"private": false,
 	"dependencies": {
 		"axios": "^0.19.1",
@@ -18,7 +18,7 @@
 		"typescript": "^3.7.4"
 	},
 	"devDependencies": {
-		"@types/jest": "^24.0.25",
+		"@types/jest": "^25.2.3",
 		"@types/node": "12.0.4",
 		"@types/q": "^1.5.2",
 		"@types/react": "^16.9.17",
