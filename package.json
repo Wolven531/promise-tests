@@ -5,10 +5,10 @@
 		"email": "anthony.williams.cs@gmail.com",
 		"url": "https://github.com/Wolven531"
 	},
-	"version": "0.3.37",
+	"version": "0.3.38",
 	"private": false,
 	"dependencies": {
-		"axios": "^0.19.1",
+		"axios": "^0.19.2",
 		"q": "^1.5.1",
 		"react": "^16.8.6",
 		"react-dom": "^16.8.6",
