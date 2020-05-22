@@ -5,7 +5,7 @@
 		"email": "anthony.williams.cs@gmail.com",
 		"url": "https://github.com/Wolven531"
 	},
-	"version": "0.3.41",
+	"version": "0.3.42",
 	"private": false,
 	"dependencies": {
 		"axios": "^0.19.2",
@@ -13,7 +13,7 @@
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-router-dom": "^5.2.0",
-		"react-scripts": "^3.3.0",
+		"react-scripts": "^3.4.1",
 		"react-syntax-highlighter": "^12.2.1",
 		"typescript": "^3.7.4"
 	},
